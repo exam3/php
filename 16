@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale-1.0">
+<title>Ajax 2 </title>
+</head>
+<body>
+ <form id="myForm">
+ <label >ENter Data : </label>
+ <input type="text" id="myInput" required>
+ <button type="submit"> Submit</button>
+ </form>
+ <div id="output"></div>
+ <script>
+ document.getElementById('myForm').addEventListener('submit',function(event){
+ event.preventDefault();
+ const input=document.getElementById('myInput').value;
+ const inputData={
+ data:input
+ };
+ fetch("https://jsonplaceholder.typicode.com/posts",
+ {
+ method:'POST',
+ headers:
+ {
+ 'Content-Type':'application/json'
+ },
+ body:JSON.stringify(inputData)
+ })
+ .then(response=>response.json())
+ .then(data=>{
+ document.getElementById('output').innerText='server Response : 
+'+JSON.stringify(data);
+ })
+ .catch(error=>{
+ console.error('Error :',error);
+ });
+ });
+ </script>
+</body>
