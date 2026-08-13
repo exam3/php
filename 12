@@ -1,0 +1,29 @@
+FTP:
+
+<html>
+<body>
+<form action="ftp.php" method="post" enctype="multipart/form-
+data"> 
+Select image to upload:
+<input type="file" name="photo"><br>
+<input type="submit" value="upload" name="submit">
+</form> </body> 
+</html>
+<?php
+ini_set("display_errors", 1);
+if(isset($_POST['submit']) && $_POST['submit'] == 'upload') {
+ extract($_POST);
+ $photo = $_FILES['photo']['name'];
+ $targetfolder = "./";
+ $targetfolder = 
+$targetfolder.basename($_FILES['photo']['name']); 
+ 
+if(move_uploaded_file($_FILES['photo']['tmp_name'],$targetfolder
+)) {
+ echo "The file " .basename($_FILES['photo']['name'])." is 
+uploaded";
+ } else {
+ echo "Problem uploading file";
+ }
+}
+?>
