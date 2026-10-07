@@ -1,0 +1,9 @@
+Database1> db.employee.aggregate ( [{ $group: {_id: null, count:{$sum: 1} } } ] )
+Database1> db.employee.aggregate ( [{ $group: {_id: null, minSalary:{$min: “$salary” }}}])
+
+Function is used to find the total salary of all employees
+Database1> db.employee.aggregate ( [{ $group: {_id: null, totalSalary:{$sum: “$salary”}}}])
+To find Job-wise total salary
+Database1> db.employee.aggregate([{ $group: {_id: “job”, jobtotalSalary:{$sum: 
+                                                                               “$salary”}}}] )
+
