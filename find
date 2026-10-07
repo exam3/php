@@ -1,0 +1,2 @@
+database1> db.employee.findOne ( { }) 
+database1> db.employee.findOne ( {name: “David” } ) 
