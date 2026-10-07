@@ -1,0 +1,10 @@
+Database1> db. employee. insertOne ({eno: “E1”, name:” Ahamed”, dob:”12.04.2000”,
+					job: “Manager”, salary:”3000”})
+insertMany ( )
+Function is used to store multiple data in the specified collection
+Database1> db. employee. insertMany ( [ {eno: “E2”, name:” David”, dob:”18.11.2001”, job: 
+                                                              “Clerk”, salary:”1600”}, {eno: “E3”, name:” Rekha”,  
+                                                              dob:”02.01.2003”, job: “Clerk”, salary:”1500”}, {eno: 
+                                                              “E4”, name:” Mani”, dob:”11.09.2001”,job: 
+                                                              “Accountant”, salary:”2000”} ] )
+                                                              
