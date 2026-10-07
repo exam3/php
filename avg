@@ -1,0 +1,7 @@
+Function is used to find the average salary of all employees
+Database1> db.employee.aggregate ( [{ $group: {_id: null, averageSalary:{$avg:
+                                                                                “$salary”}}}])
+To find job-wise average salary
+Database1> db.employee.aggregate([{ $group: {_id: “job”, jobaverageSalary:{$avg: 
+                                                                                 “$salary”}}}] )
+
