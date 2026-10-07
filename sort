@@ -1,0 +1,1 @@
+Database1> db.employee.find( ).sort({name: 1})
